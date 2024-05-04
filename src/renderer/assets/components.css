@@ -1,0 +1,104 @@
+/* Remover a scrollbar */
+body::-webkit-scrollbar {
+  width: 0;
+}
+
+nav a img {
+  height: 3rem;
+  width: 3rem;
+  padding: 4px;
+  border-radius: 3rem;
+  transition: 0.3s;
+}
+
+nav a img:hover {
+  background-color: #f1f3f4;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Componentes do modal de criação de tarefas */
+#bnt-create-task {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  border-radius: 3rem;
+  transition: 0.3s;
+}
+
+#bnt-create-task:hover {
+  background-color: #f1f3f4;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+#create-task {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 70%;
+  border: none;
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#create-task::-webkit-scrollbar {
+  width: 0;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  padding: 1rem;
+}
+
+.modal-tittle {
+  font-size: 3rem;
+}
+
+.modal-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  padding: 1rem;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  padding: 1rem;
+}
+
+#textarea-create-task {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1em;
+  width: 60%;
+  height: 20%;
+  border-radius: 1rem;
+  padding: 1rem;
+  outline: none;
+  resize: none;
+}
+#textarea-create-task::-webkit-scrollbar {
+  width: 0;
+}
+
+#textarea-create-task:is(:focus) {
+  border-color: black;
+}

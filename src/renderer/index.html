@@ -1,42 +1,56 @@
 <!doctype html>
-<html>
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <title>Electron</title>
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link href="./assets/main.css" type="text/css" rel="stylesheet" />
+    <!-- Imports de estilo -->
+    <link rel="stylesheet" href="./assets/style.css" />
+    <!-- <link rel="stylesheet" href="./assets/components.css"> -->
+    <link rel="icon" href="../assets/Icon.png" />
+    <title>Modelo de Layout</title>
   </head>
-
   <body>
-    <div id="app">
-      <img alt="logo" class="logo" src="./assets/electron.svg" />
-      <div class="creator">Powered by electron-vite</div>
-      <div class="text">
-        Build an Electron app with
-        <span class="js">JavaScript</span>
-      </div>
-      <p class="tip">Please try pressing <code>F12</code> to open the devTool</p>
-      <div class="actions">
-        <div class="action">
-          <a href="https://electron-vite.org/" target="_blank" rel="noreferrer">Documentation</a>
-        </div>
-        <div class="action">
-          <a id="ipcHandler" target="_blank" rel="noreferrer">Send IPC</a>
-        </div>
-      </div>
+    <!-- Cabeçalho -->
+    <header>
+      <h2>Logo</h2>
 
-      <ul class="versions">
-        <li class="electron-version"></li>
-        <li class="chrome-version"></li>
-        <li class="node-version"></li>
-      </ul>
-    </div>
+      <!-- Barra de navegação -->
+      <nav>
+        <!-- Adicionar Nota -->
+        <button id="bnt-create-task">
+          <img src="../../resources/assets/addIcon.svg" />
+        </button>
+        <!-- perfil -->
+        <a href="#"><img src="../../resources/assets/profileIcon.svg" /></a>
+        <!-- Configurações -->
+        <a href="#"><img src="../../resources/assets/settingsIcon.svg" /></a>
+      </nav>
+    </header>
 
-    <script type="module" src="./src/renderer.js"></script>
+    <!-- Container da página -->
+    <main>
+      <!-- Modal de criação de Nota -->
+      <dialog id="create-task">
+        <div class="wrapper">
+          <div class="modal-header">
+            <h2 class="modal-tittle">Adicionar Nota</h2>
+            <button id="bnt-add-task"></button>
+          </div>
+          <div class="modal-section">
+            <textarea
+              placeholder="Anote algo..."
+              id="textarea-create-task"
+              cols="30"
+              rows="10"
+            ></textarea>
+          </div>
+          <div class="modal-footer">
+            <button>Adicionar Nota</button>
+          </div>
+        </div>
+      </dialog>
+    </main>
+    <script></script>
   </body>
 </html>

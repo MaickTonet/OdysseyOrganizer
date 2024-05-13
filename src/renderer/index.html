@@ -31,25 +31,44 @@
     <main>
       <!-- Modal de criação de Nota -->
       <dialog id="create-task">
-        <div class="wrapper">
-          <div class="modal-header">
-            <h2 class="modal-tittle">Adicionar Nota</h2>
-            <button id="bnt-add-task"></button>
+        <div class="modal-header">
+          <h2 class="modal-tittle">Adicionar Nota</h2>
+        </div>
+        <div class="modal-options">
+          <div class="modal-date">
+            <p>Notificar em:</p>
+            <input type="datetime-local" id="modal-set-date" />
           </div>
-          <div class="modal-section">
-            <textarea
-              placeholder="Anote algo..."
-              id="textarea-create-task"
-              cols="30"
-              rows="10"
-            ></textarea>
-          </div>
-          <div class="modal-footer">
-            <button>Adicionar Nota</button>
+          <div class="modal-tag">
+            <p>Tags:</p>
+            <select id="modal-set-tag">
+              <option value="Casa">Casa</option>
+              <option value="Trabalho">Trabalho</option>
+              <option value="Lazer">Lazer</option>
+            </select>
           </div>
         </div>
+        <hr class="divider" />
+        <div class="modal-section">
+          <textarea
+            placeholder="Anote algo..."
+            id="textarea-create-task"
+            cols="30"
+            rows="10"
+          ></textarea>
+        </div>
+        <button type="submit" id="modal-btn-create-task">
+          <img src="../../resources/assets/addIcon-modal.svg" />
+        </button>
       </dialog>
     </main>
-    <script src="./src/createCard.js" defer></script>
+    <script>
+      const bntCreateTask = document.getElementById('bnt-create-task')
+      const modalCreateTask = document.getElementById('create-task')
+
+      bntCreateTask.onclick = function () {
+        modalCreateTask.showModal()
+      }
+    </script>
   </body>
 </html>

@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-@import url("components.css");
+@import url('components.css');
 
 /* Definições globais */
 * {
@@ -47,21 +47,17 @@ main {
   font-weight: 400;
   font-style: normal;
 
-  height: 100vh;
+  min-height: 100vh;
+  height: max-content;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  gap: 1rem;
 
-  padding: 10px;
+  padding: 4rem;
   margin: 20px 15px;
   border-radius: 10px;
   flex: 1 1 100%;
+  flex-wrap: wrap;
   background-color: white;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
-}
-
-/* Regras de responsividade */
-@media (max-width: 768px) {
-  main {
-    flex-wrap: wrap;
-  }
 }

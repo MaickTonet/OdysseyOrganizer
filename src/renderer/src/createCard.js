@@ -5,4 +5,3 @@ bntCreateTask.onclick = function () {
   modalCreateTask.showModal()
 }
 
-console.log("Hey!");

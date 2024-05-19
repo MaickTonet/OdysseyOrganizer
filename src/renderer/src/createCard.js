@@ -27,12 +27,12 @@ function createCard() {
   cardInfoDate.classList.add('card-info-date')
 
   const dateIcon = document.createElement('img')
-  dateIcon.src = '../../resources/assets/dateIcon.svg'
+  dateIcon.src = '../../resources/assets/date-icon.svg'
 
   // Formata a data
   function formatDate(data) {
     if (isNaN(parseInt(data))) {
-      return "";
+      return ''
     } else {
       const dataObj = new Date(data)
       const dia = String(dataObj.getDate()).padStart(2, '0')
@@ -51,7 +51,7 @@ function createCard() {
   cardInfoTag.classList.add('card-info-tag')
 
   const tagIcon = document.createElement('img')
-  tagIcon.src = '../../resources/assets/tagIcon.svg'
+  tagIcon.src = '../../resources/assets/tag-icon.svg'
 
   // Pega a tag selecionada
   const selectOption = document.getElementById('modal-set-tag')
@@ -73,19 +73,19 @@ function createCard() {
 
   const footerItem1 = document.createElement('li')
   const checkIcon = document.createElement('img')
-  checkIcon.src = '../../resources/assets/checkIcon.svg'
+  checkIcon.src = '../../resources/assets/check-icon.svg'
   checkIcon.classList.add('card-footer-option')
   footerItem1.appendChild(checkIcon)
 
   const footerItem2 = document.createElement('li')
   const editIcon = document.createElement('img')
-  editIcon.src = '../../resources/assets/editIcon.svg'
+  editIcon.src = '../../resources/assets/edit-icon.svg'
   editIcon.classList.add('card-footer-option')
   footerItem2.appendChild(editIcon)
 
   const footerItem3 = document.createElement('li')
   const deleteIcon = document.createElement('img')
-  deleteIcon.src = '../../resources/assets/deleteIcon.svg'
+  deleteIcon.src = '../../resources/assets/delete-icon.svg'
   deleteIcon.classList.add('card-footer-option')
   footerItem3.appendChild(deleteIcon)
 

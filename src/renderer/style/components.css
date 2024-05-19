@@ -23,7 +23,7 @@ nav a img:hover {
 }
 
 /* Componentes do modal de criação de tarefas */
-#bnt-create-task {
+.header-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,7 +35,7 @@ nav a img:hover {
   cursor: pointer;
 }
 
-#bnt-create-task:hover {
+.header-btn:hover {
   background-color: #f1f3f4;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
 }

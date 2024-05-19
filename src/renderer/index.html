@@ -12,18 +12,22 @@
   <body>
     <!-- Cabeçalho -->
     <header>
-      <img src="../../resources/logo-header.png" id="header-logo"/>
+      <img src="../../resources/logo-header.png" id="header-logo" />
 
       <!-- Barra de navegação -->
       <nav>
         <!-- Adicionar Nota -->
-        <button id="bnt-create-task">
-          <img src="../../resources/assets/addIcon.svg" />
+        <button id="bnt-create-task" class="header-btn">
+          <img src="../../resources/assets/add-icon.svg" />
         </button>
-        <!-- perfil -->
-        <a href="#"><img src="../../resources/assets/profileIcon.svg" /></a>
-        <!-- Configurações -->
-        <a href="#"><img src="../../resources/assets/settingsIcon.svg" /></a>
+        <!-- Filtros -->
+        <button class="header-btn">
+          <img src="../../resources/assets/filter-icon.svg" />
+        </button>
+        <!-- Perfil -->
+        <button class="header-btn">
+          <img src="../../resources/assets/profile-icon.svg" />
+        </button>
       </nav>
     </header>
 
@@ -58,7 +62,7 @@
           ></textarea>
         </div>
         <button type="submit" id="modal-btn-create-task">
-          <img src="../../resources/assets/addIcon-modal.svg" />
+          <img src="../../resources/assets/add-icon-modal.svg" />
         </button>
       </dialog>
     </main>

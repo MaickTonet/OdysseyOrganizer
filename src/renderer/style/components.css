@@ -3,6 +3,11 @@ body::-webkit-scrollbar {
   width: 0;
 }
 
+#header-logo {
+  width: 400px;
+  height: 100px;
+}
+
 /* Ajustar os botões do menu superior */
 nav a img {
   height: 3rem;

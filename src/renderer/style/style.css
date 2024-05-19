@@ -18,6 +18,8 @@ body {
 
 /* Definições do cabeçalho */
 header {
+  position: fixed;
+  width: 100%;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -25,7 +27,7 @@ header {
   border-radius: 0px 0px 20px 20px;
   display: flex;
   align-items: center;
-  flex: 1 1 100%;
+  /* flex: 1 1 100%; */
   background-color: white;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
@@ -54,7 +56,7 @@ main {
   gap: 1rem;
 
   padding: 4rem;
-  margin: 20px 15px;
+  margin: 8rem .8rem 1rem .8rem;
   border-radius: 10px;
   flex: 1 1 100%;
   flex-wrap: wrap;

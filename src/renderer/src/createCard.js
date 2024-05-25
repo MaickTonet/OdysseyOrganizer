@@ -26,8 +26,9 @@ function createCard() {
   const cardInfoDate = document.createElement('div')
   cardInfoDate.classList.add('card-info-date')
 
-  const dateIcon = document.createElement('img')
-  dateIcon.src = '../../resources/assets/date-icon.svg'
+  const dateIcon = document.createElement('i')
+  dateIcon.classList.add('fa-solid')
+  dateIcon.classList.add('fa-calendar-days')
 
   // Formata a data
   function formatDate(data) {
@@ -50,8 +51,9 @@ function createCard() {
   const cardInfoTag = document.createElement('div')
   cardInfoTag.classList.add('card-info-tag')
 
-  const tagIcon = document.createElement('img')
-  tagIcon.src = '../../resources/assets/tag-icon.svg'
+  const tagIcon = document.createElement('i')
+  tagIcon.classList.add('fa-solid')
+  tagIcon.classList.add('fa-tag')
 
   // Pega a tag selecionada
   const selectOption = document.getElementById('modal-set-tag')
@@ -72,20 +74,23 @@ function createCard() {
   const footerList = document.createElement('ul')
 
   const footerItem1 = document.createElement('li')
-  const checkIcon = document.createElement('img')
-  checkIcon.src = '../../resources/assets/check-icon.svg'
+  const checkIcon = document.createElement('i')
+  checkIcon.classList.add('fa-solid')
+  checkIcon.classList.add('fa-circle-check')
   checkIcon.classList.add('card-footer-option')
   footerItem1.appendChild(checkIcon)
 
   const footerItem2 = document.createElement('li')
-  const editIcon = document.createElement('img')
-  editIcon.src = '../../resources/assets/edit-icon.svg'
+  const editIcon = document.createElement('i')
+  editIcon.classList.add('fa-solid')
+  editIcon.classList.add('fa-pen')
   editIcon.classList.add('card-footer-option')
   footerItem2.appendChild(editIcon)
 
   const footerItem3 = document.createElement('li')
-  const deleteIcon = document.createElement('img')
-  deleteIcon.src = '../../resources/assets/delete-icon.svg'
+  const deleteIcon = document.createElement('i')
+  deleteIcon.classList.add('fa-solid')
+  deleteIcon.classList.add('fa-trash')
   deleteIcon.classList.add('card-footer-option')
   footerItem3.appendChild(deleteIcon)
 

@@ -9,17 +9,8 @@ body::-webkit-scrollbar {
 }
 
 /* Ajustar os botões do menu superior */
-nav a img {
-  height: 3rem;
-  width: 3rem;
-  padding: 4px;
-  border-radius: 3rem;
-  transition: 0.3s;
-}
-
-nav a img:hover {
-  background-color: #f1f3f4;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+.fa-solid {
+  font-size: 30px;
 }
 
 /* Componentes do modal de criação de tarefas */
@@ -30,6 +21,7 @@ nav a img:hover {
   border: none;
   background: transparent;
   border-radius: 3rem;
+  padding: 10px;
   outline: none;
   transition: 0.3s;
   cursor: pointer;
@@ -156,7 +148,7 @@ nav a img:hover {
   right: 0;
   bottom: 0;
   margin: 2.5rem;
-  padding: 0.1rem;
+  padding: 8px;
   border: none;
   border-radius: 3rem;
   outline: none;
@@ -170,96 +162,11 @@ nav a img:hover {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+#modal-btn-create-task .fa-solid {
+  color: white;
+}
+
 #textarea-create-task::-webkit-scrollbar {
   width: 0;
 }
 
-/* Componentes do card */
-.card {
-  border: 1px solid #cccccc;
-  border-radius: 1rem;
-  max-width: 20rem;
-  height: max-content;
-  box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.1);
-  margin-bottom: 2rem;
-}
-
-.card-header {
-  padding: 4rem;
-  border-radius: 1rem 1rem 0 0;
-  background-image: radial-gradient(
-    circle at top right,
-    rgb(36, 9, 119) 0%,
-    rgb(36, 9, 119) 48%,
-    rgb(72, 7, 149) 48%,
-    rgb(72, 7, 149) 53%,
-    rgb(109, 5, 178) 53%,
-    rgb(109, 5, 178) 56%,
-    rgb(145, 2, 208) 56%,
-    rgb(145, 2, 208) 69%,
-    rgb(181, 0, 237) 69%,
-    rgb(181, 0, 237) 100%
-  );
-}
-
-.card-text {
-  padding: 0.5rem 1rem 1rem 1rem;
-  word-wrap: break-word;
-}
-
-.card-text p {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.card-info {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-style: normal;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin-top: 0.5rem;
-}
-
-.card-info-date {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: .3rem;
-}
-
-.card-info-tag {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: .3rem;
-}
-
-.card-footer,
-ul,
-li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row-reverse;
-  width: 100%;
-}
-
-.card-footer li {
-  margin-bottom: 1rem;
-}
-
-.card-footer-option {
-  background-color: transparent;
-  padding: 0.5rem;
-  border-radius: 50%;
-  transition: 0.3s;
-}
-
-.card-footer-option:hover {
-  cursor: pointer;
-  background-color: rgba(211, 211, 211, 0.2);
-}

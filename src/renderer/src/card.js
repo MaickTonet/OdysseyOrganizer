@@ -2,9 +2,16 @@
 const bntCreateTask = document.getElementById('bnt-create-task')
 const modalCreateTask = document.getElementById('create-task')
 
+//Abre o modal
 bntCreateTask.onclick = function () {
   modalCreateTask.showModal()
 }
+
+// Reseta o placeholder de texto quando o modal é fechado
+modalCreateTask.addEventListener('close', function () {
+  let textarea = document.getElementById('textarea-create-task')
+  textarea.placeholder = 'Digite algo...'
+})
 
 // Codigo para criar o card
 const bntCreateCard = document.getElementById('modal-btn-create-task')
@@ -125,6 +132,13 @@ function createCard() {
   main.appendChild(card)
 }
 
+//Verifica se tem algum texto no textarea
 bntCreateCard.onclick = function () {
-  createCard()
+  if (document.getElementById('textarea-create-task').value == '') {
+    let textarea = document.getElementById('textarea-create-task')
+    textarea.placeholder = 'Digite algum texto para adicionar o card'
+  } else {
+    modalCreateTask.close()
+    createCard()
+  }
 }

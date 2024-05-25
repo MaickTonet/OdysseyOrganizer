@@ -20,8 +20,8 @@ body::-webkit-scrollbar {
   justify-content: center;
   border: none;
   background: transparent;
-  border-radius: 3rem;
-  padding: 10px;
+  border-radius: 8rem;
+  padding: 6px;
   outline: none;
   transition: 0.3s;
   cursor: pointer;
@@ -148,9 +148,9 @@ body::-webkit-scrollbar {
   right: 0;
   bottom: 0;
   margin: 2.5rem;
-  padding: 8px;
+  padding: 12px;
   border: none;
-  border-radius: 3rem;
+  border-radius: 10rem;
   outline: none;
   transition: 0.3s;
   background-color: black;

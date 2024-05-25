@@ -32,7 +32,7 @@ body::-webkit-scrollbar {
 }
 
 #create-task {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -43,6 +43,23 @@ body::-webkit-scrollbar {
   border-radius: 1rem;
   outline: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#create-task[open] {
+  -webkit-animation: show 0.6s ease normal;
+}
+
+@-webkit-keyframes show {
+  from {
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  to {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 /* Opacidade do fundo quando o modal estiver ativo */
@@ -168,4 +185,3 @@ body::-webkit-scrollbar {
 #textarea-create-task::-webkit-scrollbar {
   width: 0;
 }
-

@@ -23,30 +23,37 @@ function createCard() {
   const cardInfo = document.createElement('div')
   cardInfo.classList.add('card-info')
 
-  const cardInfoDate = document.createElement('div')
-  cardInfoDate.classList.add('card-info-date')
+  //Verifica se a data foi preenchida e caso seja false não inclui o valor no card
+  if (isNaN(document.getElementById('modal-set-date').value)) {
+    const cardInfoDate = document.createElement('div')
+    cardInfoDate.classList.add('card-info-date')
 
-  const dateIcon = document.createElement('i')
-  dateIcon.classList.add('fa-solid')
-  dateIcon.classList.add('fa-calendar-days')
+    const dateIcon = document.createElement('i')
+    dateIcon.classList.add('fa-solid')
+    dateIcon.classList.add('fa-calendar-days')
 
-  // Formata a data
-  function formatDate(data) {
-    if (isNaN(parseInt(data))) {
-      return ''
-    } else {
-      const dataObj = new Date(data)
-      const dia = String(dataObj.getDate()).padStart(2, '0')
-      const mes = String(dataObj.getMonth() + 1).padStart(2, '0') // Mês é base 0, então é necessário adicionar 1
-      const ano = dataObj.getFullYear()
-      const horas = String(dataObj.getHours()).padStart(2, '0')
-      const minutos = String(dataObj.getMinutes()).padStart(2, '0')
-      return `${dia}/${mes}/${ano} - ${horas}:${minutos}`
+    // Formata a data
+    function formatDate(data) {
+      if (isNaN(parseInt(data))) {
+        return ''
+      } else {
+        const dataObj = new Date(data)
+        const dia = String(dataObj.getDate()).padStart(2, '0')
+        const mes = String(dataObj.getMonth() + 1).padStart(2, '0') // Mês é base 0, então é necessário adicionar 1
+        const ano = dataObj.getFullYear()
+        const horas = String(dataObj.getHours()).padStart(2, '0')
+        const minutos = String(dataObj.getMinutes()).padStart(2, '0')
+        return `${dia}/${mes}/${ano} - ${horas}:${minutos}`
+      }
     }
-  }
 
-  const dateText = document.createElement('p')
-  dateText.textContent = formatDate(document.getElementById('modal-set-date').value)
+    const dateText = document.createElement('p')
+    dateText.textContent = formatDate(document.getElementById('modal-set-date').value)
+
+    cardInfoDate.appendChild(dateIcon)
+    cardInfoDate.appendChild(dateText)
+    cardInfo.appendChild(cardInfoDate)
+  }
 
   const cardInfoTag = document.createElement('div')
   cardInfoTag.classList.add('card-info-tag')
@@ -95,13 +102,10 @@ function createCard() {
   footerItem3.appendChild(deleteIcon)
 
   // Monta a estrutura
-  cardInfoDate.appendChild(dateIcon)
-  cardInfoDate.appendChild(dateText)
 
   cardInfoTag.appendChild(tagIcon)
   cardInfoTag.appendChild(tagText)
 
-  cardInfo.appendChild(cardInfoDate)
   cardInfo.appendChild(cardInfoTag)
 
   cardText.appendChild(cardTextContent)

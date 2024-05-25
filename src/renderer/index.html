@@ -45,29 +45,32 @@
         <div class="modal-header">
           <h2 class="modal-tittle">Adicionar Nota</h2>
         </div>
-        <div class="modal-options">
-          <div class="modal-date">
-            <p>Notificar em:</p>
-            <input type="datetime-local" id="modal-set-date" />
+        <form action="">
+          <div class="modal-options">
+            <div class="modal-date">
+              <p>Notificar em:</p>
+              <input type="datetime-local" id="modal-set-date" />
+            </div>
+            <div class="modal-tag">
+              <p>Tags:</p>
+              <select id="modal-set-tag">
+                <option value="Casa">Casa</option>
+                <option value="Trabalho">Trabalho</option>
+                <option value="Lazer">Lazer</option>
+              </select>
+            </div>
           </div>
-          <div class="modal-tag">
-            <p>Tags:</p>
-            <select id="modal-set-tag">
-              <option value="Casa">Casa</option>
-              <option value="Trabalho">Trabalho</option>
-              <option value="Lazer">Lazer</option>
-            </select>
+          <hr class="divider" />
+          <div class="modal-section">
+            <textarea
+              placeholder="Anote algo..."
+              id="textarea-create-task"
+              cols="30"
+              rows="10"
+              maxlength="200"
+            ></textarea>
           </div>
-        </div>
-        <hr class="divider" />
-        <div class="modal-section">
-          <textarea
-            placeholder="Anote algo..."
-            id="textarea-create-task"
-            cols="30"
-            rows="10"
-          ></textarea>
-        </div>
+        </form>
         <button type="submit" id="modal-btn-create-task">
           <i class="fa-solid fa-plus"></i>
         </button>

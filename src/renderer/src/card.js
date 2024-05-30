@@ -27,6 +27,10 @@ function createCard() {
 
   const cardHeader = document.createElement('div')
   cardHeader.classList.add('card-header')
+  const checkCard = document.createElement('i')
+  checkCard.classList.add('fa-regular')
+  checkCard.classList.add('fa-circle-check')
+  cardHeader.appendChild(checkCard)
 
   const cardInfo = document.createElement('div')
   cardInfo.classList.add('card-info')
@@ -88,29 +92,66 @@ function createCard() {
 
   const footerList = document.createElement('ul')
 
+  // Adiciona o ícone de check no card
   const footerItem1 = document.createElement('li')
+  const checkButton = document.createElement('button')
+  checkButton.classList.add('check-bnt')
+  checkButton.classList.add('option-bnt')
   const checkIcon = document.createElement('i')
   checkIcon.classList.add('fa-solid')
   checkIcon.classList.add('fa-circle-check')
   checkIcon.classList.add('card-footer-option')
-  footerItem1.appendChild(checkIcon)
+  checkIcon.classList.add('card-footer-option-check')
+  checkButton.appendChild(checkIcon)
+  footerItem1.appendChild(checkButton)
 
+  //Alterar o card para concluído
+  checkButton.addEventListener('click', function () {
+    const currentCard = this.closest('.card')
+    if (currentCard && !card.classList.contains('card-checked')) {
+      cardHeader.classList.add('header-checked')
+      card.classList.add('card-checked')
+      checkCard.classList.add('icon-checked')
+      cardTextContent.classList.add('text-checked')
+    } else if (currentCard) {
+      cardHeader.classList.remove('header-checked')
+      card.classList.remove('card-checked')
+      checkCard.classList.remove('icon-checked')
+      cardTextContent.classList.remove('text-checked')
+    }
+  })
+
+  // Adiciona o ícone de edição no card
   const footerItem2 = document.createElement('li')
   const editIcon = document.createElement('i')
   editIcon.classList.add('fa-solid')
   editIcon.classList.add('fa-pen')
   editIcon.classList.add('card-footer-option')
+  editIcon.classList.add('card-footer-option-edit')
   footerItem2.appendChild(editIcon)
 
+  // Adiciona o ícone de delete no card
   const footerItem3 = document.createElement('li')
   const deleteIcon = document.createElement('i')
+  const deleteButton = document.createElement('button')
+  deleteButton.classList.add('delete-bnt')
+  deleteButton.classList.add('option-bnt')
   deleteIcon.classList.add('fa-solid')
   deleteIcon.classList.add('fa-trash')
   deleteIcon.classList.add('card-footer-option')
-  footerItem3.appendChild(deleteIcon)
+  deleteIcon.classList.add('card-footer-option-delete')
+  deleteButton.appendChild(deleteIcon)
+  footerItem3.appendChild(deleteButton)
+
+  // Deleta o card caso o botão seja pressionado
+  deleteButton.addEventListener('click', function () {
+    const currentCard = this.closest('.card')
+    if (currentCard) {
+      currentCard.remove() // Remove o card pai do botão clicado
+    }
+  })
 
   // Monta a estrutura
-
   cardInfoTag.appendChild(tagIcon)
   cardInfoTag.appendChild(tagText)
 

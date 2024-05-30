@@ -10,7 +10,12 @@
 }
 
 .card-header {
-  padding: 4rem;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  color: transparent;
+  padding: 20px;
+  font-size: 40px;
   border-radius: 1rem 1rem 0 0;
   background-image: radial-gradient(
     circle at top right,
@@ -86,7 +91,100 @@ li {
   transition: 0.3s;
 }
 
+/* Define as cores dos botões de opção do footer */
+
 .card-footer-option:hover {
   cursor: pointer;
-  background-color: rgba(211, 211, 211, 0.2);
+  transform: scale(1.2);
+}
+
+.card-footer-option-check:hover {
+  color: rgb(12, 222, 12);
+}
+.card-footer-option-edit:hover {
+  color: blue;
+}
+.card-footer-option-delete:hover {
+  color: red;
+}
+
+.option-bnt {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+/* Modificações para quando o card estiver concluído */
+
+.header-checked {
+  background-image: radial-gradient(
+      circle at 77% 26%,
+      rgba(175, 175, 175, 0.06) 0%,
+      rgba(175, 175, 175, 0.06) 4%,
+      transparent 4%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 37% 90%,
+      rgba(129, 129, 129, 0.06) 0%,
+      rgba(129, 129, 129, 0.06) 55%,
+      transparent 55%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 7% 92%,
+      rgba(53, 53, 53, 0.06) 0%,
+      rgba(53, 53, 53, 0.06) 39%,
+      transparent 39%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 65% 17%,
+      rgba(128, 128, 128, 0.06) 0%,
+      rgba(128, 128, 128, 0.06) 60%,
+      transparent 60%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 100% 39%,
+      rgba(75, 75, 75, 0.06) 0%,
+      rgba(75, 75, 75, 0.06) 20%,
+      transparent 20%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 92% 34%,
+      rgba(205, 205, 205, 0.06) 0%,
+      rgba(205, 205, 205, 0.06) 35%,
+      transparent 35%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 63% 90%,
+      rgba(98, 98, 98, 0.06) 0%,
+      rgba(98, 98, 98, 0.06) 62%,
+      transparent 62%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 93% 74%,
+      rgba(130, 130, 130, 0.06) 0%,
+      rgba(130, 130, 130, 0.06) 65%,
+      transparent 65%,
+      transparent 100%
+    ),
+    linear-gradient(90deg, rgb(18, 233, 78), rgb(160, 239, 92));
+}
+
+.card-checked {
+  border: 3px solid green;
+}
+
+.icon-checked {
+  color: white;
+}
+
+.text-checked {
+  text-decoration: line-through;
+  color: gray;
 }

@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-@import url('components.css');
+@import url('modals.css');
 @import url('card.css');
 
 /* Definições globais */
@@ -31,6 +31,7 @@ header {
   /* flex: 1 1 100%; */
   background-color: white;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
 }
 
 /* Definições da barra de navegação */

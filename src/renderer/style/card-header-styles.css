@@ -1,0 +1,365 @@
+.card-header-style-1 {
+  background-image: radial-gradient(
+    circle at top right,
+    rgb(36, 9, 119) 0%,
+    rgb(36, 9, 119) 48%,
+    rgb(72, 7, 149) 48%,
+    rgb(72, 7, 149) 53%,
+    rgb(109, 5, 178) 53%,
+    rgb(109, 5, 178) 56%,
+    rgb(145, 2, 208) 56%,
+    rgb(145, 2, 208) 69%,
+    rgb(181, 0, 237) 69%,
+    rgb(181, 0, 237) 100%
+  );
+}
+
+.card-header-style-2 {
+  background-image: linear-gradient(
+      135deg,
+      rgba(139, 53, 123, 0.5) 0%,
+      rgba(139, 53, 123, 0.5) 10%,
+      transparent 10%,
+      transparent 19%,
+      rgba(84, 33, 86, 0.5) 19%,
+      rgba(84, 33, 86, 0.5) 27%,
+      rgba(157, 60, 135, 0.5) 27%,
+      rgba(157, 60, 135, 0.5) 53%,
+      transparent 53%,
+      transparent 56%,
+      rgba(176, 66, 147, 0.5) 56%,
+      rgba(176, 66, 147, 0.5) 61%,
+      rgba(102, 40, 98, 0.5) 61%,
+      rgba(102, 40, 98, 0.5) 100%
+    ),
+    linear-gradient(
+      45deg,
+      rgb(139, 53, 123) 0%,
+      rgb(139, 53, 123) 8%,
+      transparent 8%,
+      transparent 9%,
+      transparent 9%,
+      transparent 10%,
+      rgb(157, 60, 135) 10%,
+      rgb(157, 60, 135) 14%,
+      rgb(121, 46, 110) 14%,
+      rgb(121, 46, 110) 50%,
+      rgb(176, 66, 147) 50%,
+      rgb(176, 66, 147) 97%,
+      rgb(102, 40, 98) 97%,
+      rgb(102, 40, 98) 100%
+    ),
+    linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255));
+}
+.card-header-style-3 {
+  background-image: linear-gradient(135deg, rgb(62, 62, 62), rgb(179, 179, 179)),
+    linear-gradient(
+      135deg,
+      rgba(84, 137, 228, 0.5) 0%,
+      rgba(84, 137, 228, 0.5) 51%,
+      rgba(69, 113, 204, 0.5) 51%,
+      rgba(69, 113, 204, 0.5) 58%,
+      rgba(54, 88, 180, 0.5) 58%,
+      rgba(54, 88, 180, 0.5) 61%,
+      rgba(38, 64, 157, 0.5) 61%,
+      rgba(38, 64, 157, 0.5) 63%,
+      rgba(23, 39, 133, 0.5) 63%,
+      rgba(23, 39, 133, 0.5) 75%,
+      rgba(8, 15, 109, 0.5) 75%,
+      rgba(8, 15, 109, 0.5) 100%
+    ),
+    linear-gradient(
+      90deg,
+      rgb(84, 137, 228) 0%,
+      rgb(84, 137, 228) 51%,
+      rgb(69, 113, 204) 51%,
+      rgb(69, 113, 204) 58%,
+      rgb(54, 88, 180) 58%,
+      rgb(54, 88, 180) 61%,
+      rgb(38, 64, 157) 61%,
+      rgb(38, 64, 157) 63%,
+      rgb(23, 39, 133) 63%,
+      rgb(23, 39, 133) 75%,
+      rgb(8, 15, 109) 75%,
+      rgb(8, 15, 109) 100%
+    );
+  background-blend-mode: overlay, overlay, normal;
+}
+.card-header-style-4 {
+  background-image: repeating-radial-gradient(
+      circle at center center,
+      rgba(249, 92, 47, 0.4) 0px,
+      rgba(249, 92, 47, 0.4) 3px,
+      transparent 3px,
+      transparent 7px,
+      rgba(220, 87, 48, 0.4) 7px,
+      rgba(220, 87, 48, 0.4) 19px,
+      transparent 19px,
+      transparent 23px,
+      rgba(132, 72, 51, 0.4) 23px,
+      rgba(132, 72, 51, 0.4) 33px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgb(0, 0, 0) 0px,
+      rgb(0, 0, 0) 2px,
+      rgb(0, 0, 0) 2px,
+      rgb(0, 0, 0) 9px,
+      rgb(0, 0, 0) 9px,
+      rgb(0, 0, 0) 15px,
+      rgb(0, 0, 0) 15px,
+      rgb(0, 0, 0) 26px
+    );
+  background-size: 60px 60px;
+}
+.card-header-style-5 {
+  background-image: radial-gradient(
+      circle at 23% 4%,
+      hsla(350, 0%, 85%, 0.1) 0%,
+      hsla(350, 0%, 85%, 0.1) 11%,
+      transparent 11%,
+      transparent 40%,
+      transparent 40%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 55% 100%,
+      hsla(350, 0%, 85%, 0.1) 0%,
+      hsla(350, 0%, 85%, 0.1) 74%,
+      transparent 74%,
+      transparent 87%,
+      transparent 87%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 91% 68%,
+      hsla(350, 0%, 85%, 0.1) 0%,
+      hsla(350, 0%, 85%, 0.1) 82%,
+      transparent 82%,
+      transparent 84%,
+      transparent 84%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 60% 53%,
+      hsla(350, 0%, 85%, 0.1) 0%,
+      hsla(350, 0%, 85%, 0.1) 66%,
+      transparent 66%,
+      transparent 85%,
+      transparent 85%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 13% 90%,
+      hsla(350, 0%, 85%, 0.1) 0%,
+      hsla(350, 0%, 85%, 0.1) 10%,
+      transparent 10%,
+      transparent 11%,
+      transparent 11%,
+      transparent 100%
+    ),
+    linear-gradient(0deg, rgb(147, 89, 251), rgb(77, 10, 183));
+}
+.card-header-style-6 {
+  background-image: repeating-linear-gradient(
+      90deg,
+      rgba(250, 54, 20, 0.5) 0px,
+      rgba(250, 54, 20, 0.5) 10px,
+      transparent 10px,
+      transparent 20px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(250, 54, 20, 0.5) 0px,
+      rgba(250, 54, 20, 0.5) 10px,
+      transparent 10px,
+      transparent 20px
+    ),
+    linear-gradient(90deg, #ffffff, #ffffff);
+}
+.card-header-style-7 {
+  background-image: linear-gradient(
+      53deg,
+      rgba(11, 11, 11, 0.05) 0%,
+      rgba(11, 11, 11, 0.05) 50%,
+      rgba(228, 228, 228, 0.05) 50%,
+      rgba(228, 228, 228, 0.05) 100%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(228, 228, 228, 0.05) 0%,
+      rgba(228, 228, 228, 0.05) 50%,
+      rgba(188, 188, 188, 0.05) 50%,
+      rgba(188, 188, 188, 0.05) 100%
+    ),
+    linear-gradient(
+      238deg,
+      rgba(18, 18, 18, 0.05) 0%,
+      rgba(18, 18, 18, 0.05) 50%,
+      rgba(156, 156, 156, 0.05) 50%,
+      rgba(156, 156, 156, 0.05) 100%
+    ),
+    linear-gradient(
+      178deg,
+      rgba(11, 11, 11, 0.05) 0%,
+      rgba(11, 11, 11, 0.05) 50%,
+      rgba(108, 108, 108, 0.05) 50%,
+      rgba(108, 108, 108, 0.05) 100%
+    ),
+    linear-gradient(
+      10deg,
+      rgba(26, 26, 26, 0.05) 0%,
+      rgba(26, 26, 26, 0.05) 50%,
+      rgba(135, 135, 135, 0.05) 50%,
+      rgba(135, 135, 135, 0.05) 100%
+    ),
+    linear-gradient(
+      247deg,
+      rgba(4, 4, 4, 0.05) 0%,
+      rgba(4, 4, 4, 0.05) 50%,
+      rgba(30, 30, 30, 0.05) 50%,
+      rgba(30, 30, 30, 0.05) 100%
+    ),
+    linear-gradient(
+      111deg,
+      rgba(61, 61, 61, 0.05) 0%,
+      rgba(61, 61, 61, 0.05) 50%,
+      rgba(255, 255, 255, 0.05) 50%,
+      rgba(255, 255, 255, 0.05) 100%
+    ),
+    linear-gradient(
+      141deg,
+      rgba(135, 135, 135, 0.05) 0%,
+      rgba(135, 135, 135, 0.05) 50%,
+      rgba(195, 195, 195, 0.05) 50%,
+      rgba(195, 195, 195, 0.05) 100%
+    ),
+    linear-gradient(
+      133deg,
+      rgba(14, 14, 14, 0.05) 0%,
+      rgba(14, 14, 14, 0.05) 50%,
+      rgba(198, 198, 198, 0.05) 50%,
+      rgba(198, 198, 198, 0.05) 100%
+    ),
+    radial-gradient(circle at center center, rgb(236, 31, 161) 0%, rgb(237, 16, 210) 62%);
+}
+.card-header-style-8 {
+  background-image: linear-gradient(
+      45deg,
+      rgba(135, 135, 135, 0.04) 0%,
+      rgba(135, 135, 135, 0.04) 4%,
+      rgba(73, 73, 73, 0.04) 4%,
+      rgba(73, 73, 73, 0.04) 5%,
+      rgba(161, 161, 161, 0.04) 5%,
+      rgba(161, 161, 161, 0.04) 8%,
+      rgba(22, 22, 22, 0.04) 8%,
+      rgba(22, 22, 22, 0.04) 14%,
+      rgba(46, 46, 46, 0.04) 14%,
+      rgba(46, 46, 46, 0.04) 70%,
+      rgba(199, 199, 199, 0.04) 70%,
+      rgba(199, 199, 199, 0.04) 80%,
+      rgba(0, 0, 0, 0.04) 80%,
+      rgba(0, 0, 0, 0.04) 100%
+    ),
+    linear-gradient(
+      45deg,
+      rgba(56, 56, 56, 0.1) 0%,
+      rgba(56, 56, 56, 0.1) 36%,
+      rgba(255, 255, 255, 0.1) 36%,
+      rgba(255, 255, 255, 0.1) 62%,
+      rgba(197, 197, 197, 0.1) 62%,
+      rgba(197, 197, 197, 0.1) 71%,
+      rgba(255, 255, 255, 0.1) 71%,
+      rgba(255, 255, 255, 0.1) 75%,
+      rgba(168, 168, 168, 0.1) 75%,
+      rgba(168, 168, 168, 0.1) 98%,
+      rgba(249, 249, 249, 0.1) 98%,
+      rgba(249, 249, 249, 0.1) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(42, 42, 42, 0.05) 0%,
+      rgba(42, 42, 42, 0.05) 9%,
+      rgba(254, 254, 254, 0.05) 9%,
+      rgba(254, 254, 254, 0.05) 11%,
+      rgba(109, 109, 109, 0.05) 11%,
+      rgba(109, 109, 109, 0.05) 28%,
+      rgba(250, 250, 250, 0.05) 28%,
+      rgba(250, 250, 250, 0.05) 86%,
+      rgba(191, 191, 191, 0.05) 86%,
+      rgba(191, 191, 191, 0.05) 100%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(175, 175, 175, 0.05) 0%,
+      rgba(175, 175, 175, 0.05) 12%,
+      rgba(195, 195, 195, 0.05) 12%,
+      rgba(195, 195, 195, 0.05) 34%,
+      rgba(10, 10, 10, 0.05) 34%,
+      rgba(10, 10, 10, 0.05) 56%,
+      rgba(241, 241, 241, 0.05) 56%,
+      rgba(241, 241, 241, 0.05) 81%,
+      rgba(244, 244, 244, 0.05) 81%,
+      rgba(244, 244, 244, 0.05) 82%,
+      rgba(36, 36, 36, 0.05) 82%,
+      rgba(36, 36, 36, 0.05) 84%,
+      rgba(161, 161, 161, 0.05) 84%,
+      rgba(161, 161, 161, 0.05) 99%,
+      rgba(81, 81, 81, 0.05) 99%,
+      rgba(81, 81, 81, 0.05) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(146, 146, 146, 0.05) 0%,
+      rgba(146, 146, 146, 0.05) 22%,
+      rgba(239, 239, 239, 0.05) 22%,
+      rgba(239, 239, 239, 0.05) 31%,
+      rgba(147, 147, 147, 0.05) 31%,
+      rgba(147, 147, 147, 0.05) 33%,
+      rgba(209, 209, 209, 0.05) 33%,
+      rgba(209, 209, 209, 0.05) 77%,
+      rgba(129, 129, 129, 0.05) 77%,
+      rgba(129, 129, 129, 0.05) 88%,
+      rgba(20, 20, 20, 0.05) 88%,
+      rgba(20, 20, 20, 0.05) 100%
+    ),
+    linear-gradient(90deg, rgb(125, 116, 141), rgb(26, 181, 231), rgb(7, 239, 70));
+}
+.card-header-style-9 {
+  background-image: linear-gradient(
+    45deg,
+    rgb(47, 38, 96) 0%,
+    rgb(47, 38, 96) 1%,
+    rgb(80, 63, 103) 1%,
+    rgb(80, 63, 103) 53%,
+    rgb(113, 87, 110) 53%,
+    rgb(113, 87, 110) 57%,
+    rgb(146, 112, 116) 57%,
+    rgb(146, 112, 116) 69%,
+    rgb(179, 136, 123) 69%,
+    rgb(179, 136, 123) 75%,
+    rgb(212, 161, 130) 75%,
+    rgb(212, 161, 130) 100%
+  );
+}
+.card-header-style-10 {
+  background-image: linear-gradient(
+    45deg,
+    rgb(98, 31, 155) 0%,
+    rgb(98, 31, 155) 24%,
+    rgb(90, 59, 158) 24%,
+    rgb(90, 59, 158) 25%,
+    rgb(82, 86, 161) 25%,
+    rgb(82, 86, 161) 27%,
+    rgb(74, 114, 164) 27%,
+    rgb(74, 114, 164) 36%,
+    rgb(66, 141, 167) 36%,
+    rgb(66, 141, 167) 73%,
+    rgb(58, 169, 170) 73%,
+    rgb(58, 169, 170) 75%,
+    rgb(50, 196, 173) 75%,
+    rgb(50, 196, 173) 80%,
+    rgb(42, 224, 176) 80%,
+    rgb(42, 224, 176) 100%
+  );
+}

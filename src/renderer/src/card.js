@@ -25,8 +25,12 @@ function createCard() {
   const card = document.createElement('div')
   card.classList.add('card')
 
+  // Adiciona um header randômico para o card
   const cardHeader = document.createElement('div')
+
+  const randomNumber = Math.floor(Math.random() * 10) + 1
   cardHeader.classList.add('card-header')
+  cardHeader.classList.add('card-header-style-' + randomNumber)
   const checkCard = document.createElement('i')
   checkCard.classList.add('fa-regular')
   checkCard.classList.add('fa-circle-check')
@@ -110,11 +114,13 @@ function createCard() {
     const currentCard = this.closest('.card')
     if (currentCard && !card.classList.contains('card-checked')) {
       cardHeader.classList.add('header-checked')
+      cardHeader.classList.remove('card-header-style-' + randomNumber)
       card.classList.add('card-checked')
       checkCard.classList.add('icon-checked')
       cardTextContent.classList.add('text-checked')
     } else if (currentCard) {
       cardHeader.classList.remove('header-checked')
+      cardHeader.classList.add('card-header-style-' + randomNumber)
       card.classList.remove('card-checked')
       checkCard.classList.remove('icon-checked')
       cardTextContent.classList.remove('text-checked')

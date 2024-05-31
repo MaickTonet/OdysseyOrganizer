@@ -89,6 +89,7 @@ function createCard() {
   // Adiciona o texto no card
   const cardTextValue = document.getElementById('textarea-create-task')
   const cardTextContent = document.createElement('p')
+  cardTextContent.classList.add('card-text-content')
   cardTextContent.textContent = cardTextValue.value
 
   const cardFooter = document.createElement('div')
@@ -130,11 +131,15 @@ function createCard() {
   // Adiciona o ícone de edição no card
   const footerItem2 = document.createElement('li')
   const editIcon = document.createElement('i')
+  const editButton = document.createElement('button')
+  editButton.classList.add('edit-bnt')
+  editButton.classList.add('option-bnt')
   editIcon.classList.add('fa-solid')
   editIcon.classList.add('fa-pen')
   editIcon.classList.add('card-footer-option')
   editIcon.classList.add('card-footer-option-edit')
-  footerItem2.appendChild(editIcon)
+  editButton.appendChild(editIcon)
+  footerItem2.appendChild(editButton)
 
   // Adiciona o ícone de delete no card
   const footerItem3 = document.createElement('li')

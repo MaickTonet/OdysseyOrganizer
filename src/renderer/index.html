@@ -52,7 +52,7 @@
               <input type="datetime-local" id="modal-set-date" />
             </div>
             <div class="modal-tag">
-              <p>Tags:</p>
+              <p>Tag:</p>
               <select id="modal-set-tag">
                 <option value="Casa">Casa</option>
                 <option value="Trabalho">Trabalho</option>
@@ -73,6 +73,42 @@
         </form>
         <button type="submit" id="modal-btn-create-task">
           <i class="fa-solid fa-plus"></i>
+        </button>
+      </dialog>
+
+      <!-- Modal de edição de nota -->
+      <dialog id="edit-task">
+        <div class="modal-header">
+          <h2 class="modal-tittle">Editar Nota</h2>
+        </div>
+        <form action="">
+          <div class="modal-options">
+            <div class="modal-date">
+              <p>Notificar em:</p>
+              <input type="datetime-local" id="edit-modal-set-date" />
+            </div>
+            <div class="modal-tag">
+              <p>Tag:</p>
+              <select id="edit-modal-set-tag">
+                <option value="Casa">Casa</option>
+                <option value="Trabalho">Trabalho</option>
+                <option value="Lazer">Lazer</option>
+              </select>
+            </div>
+          </div>
+          <hr class="divider" />
+          <div class="modal-section">
+            <textarea
+              placeholder="Mudou de ideia?.."
+              id="textarea-edit-task"
+              cols="30"
+              rows="10"
+              maxlength="200"
+            ></textarea>
+          </div>
+        </form>
+        <button type="submit" id="modal-btn-edit-task">
+          <i class="fa-solid fa-pen"></i>
         </button>
       </dialog>
     </main>

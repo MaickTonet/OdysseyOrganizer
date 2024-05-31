@@ -185,3 +185,106 @@ body::-webkit-scrollbar {
 #textarea-create-task::-webkit-scrollbar {
   width: 0;
 }
+
+/* Modal de edição de notas */
+#edit-task {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 70%;
+  border: none;
+  padding: 3rem;
+  border-radius: 1rem;
+  outline: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#edit-task[open] {
+  -webkit-animation: show 0.6s ease normal;
+}
+
+@-webkit-keyframes show {
+  from {
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  to {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Opacidade do fundo quando o modal estiver ativo */
+#edit-task::backdrop {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Remove a scrollbar do modal */
+#edit-task::-webkit-scrollbar {
+  width: 0;
+}
+
+#edit-modal-set-date {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+  border: 1px solid gray;
+  outline: none;
+}
+
+#edit-modal-set-tag {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+  border: 1px solid gray;
+  outline: none;
+}
+
+#textarea-edit-task {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1em;
+  width: 60%;
+  height: 20%;
+  border-radius: 1rem;
+  border: none;
+  padding: 1rem;
+  outline: none;
+  resize: none;
+}
+
+#modal-btn-edit-task {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin: 2.5rem;
+  padding: 12px;
+  border: none;
+  border-radius: 10rem;
+  outline: none;
+  transition: 0.3s;
+  background-color: black;
+}
+
+#modal-btn-edit-task:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#modal-btn-edit-task .fa-solid {
+  color: white;
+}
+
+#textarea-edit-task::-webkit-scrollbar {
+  width: 0;
+}

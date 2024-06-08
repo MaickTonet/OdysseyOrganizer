@@ -7,9 +7,13 @@ bntCreateTask.onclick = function () {
   modalCreateTask.showModal()
 }
 
-// Reseta o placeholder de texto quando o modal é fechado
+// Reseta o modal quando fechado
 modalCreateTask.addEventListener('close', function () {
   let textarea = document.getElementById('textarea-create-task')
+  let datearea = document.getElementById('modal-set-date')
+  let tagarea = document.getElementById('modal-set-tag')
+  tagarea.value = ''
+  datearea.value = ''
   textarea.placeholder = 'Digite algo...'
   textarea.value = ''
 })
@@ -57,9 +61,7 @@ function createCard() {
         const dia = String(dataObj.getDate()).padStart(2, '0')
         const mes = String(dataObj.getMonth() + 1).padStart(2, '0') // Mês é base 0, então é necessário adicionar 1
         const ano = dataObj.getFullYear()
-        const horas = String(dataObj.getHours()).padStart(2, '0')
-        const minutos = String(dataObj.getMinutes()).padStart(2, '0')
-        return `${dia}/${mes}/${ano} - ${horas}:${minutos}`
+        return `${dia}/${mes}/${ano}`
       }
     }
 
@@ -73,6 +75,7 @@ function createCard() {
 
   const cardInfoTag = document.createElement('div')
   cardInfoTag.classList.add('card-info-tag')
+  cardInfoTag.classList.add(document.getElementById('modal-set-tag').value)
 
   const tagIcon = document.createElement('i')
   tagIcon.classList.add('fa-solid')

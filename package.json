@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Projeto de organização de rotina com temática espacial",
   "main": "./out/main/index.js",
-  "author": "Davi Ribeiro <ribeirodavivargas@gmail.com> and Maick Tonet <maicktonet4@gmail.com>",
+  "author": "Maick Tonet <maicktonet4@gmail.com> and Davi Ribeiro <ribeirodavivargas@gmail.com>",
   "homepage": "https://electron-vite.org",
   "scripts": {
     "format": "prettier --write .",

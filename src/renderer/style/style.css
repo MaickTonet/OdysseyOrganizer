@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import url('modals.css');
 @import url('card.css');
-@import url('card-header-styles.css');
+@import url('./utils/card-header-styles.css');
+@import url('./utils/tags-colors.css');
 
 /* Definições globais */
 * {

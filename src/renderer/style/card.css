@@ -3,7 +3,6 @@
   background-color: white;
   min-width: 14rem;
   border-radius: 1rem;
-  max-width: 16rem;
   height: max-content;
   box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
@@ -33,6 +32,7 @@
 .card-info {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
+  font-size: 15px;
   font-style: normal;
 
   display: flex;
@@ -40,6 +40,10 @@
   justify-content: space-around;
   gap: 0.5rem;
   padding: 1rem;
+}
+
+.card-info .fa-solid {
+  font-size: 16px;
 }
 
 .card-info-date {

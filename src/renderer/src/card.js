@@ -11,8 +11,6 @@ bntCreateTask.onclick = function () {
 modalCreateTask.addEventListener('close', function () {
   let textarea = document.getElementById('textarea-create-task')
   let datearea = document.getElementById('modal-set-date')
-  let tagarea = document.getElementById('modal-set-tag')
-  tagarea.value = ''
   datearea.value = ''
   textarea.placeholder = 'Digite algo...'
   textarea.value = ''
@@ -66,7 +64,9 @@ function createCard() {
     }
 
     const dateText = document.createElement('p')
-    dateText.textContent = formatDate(document.getElementById('modal-set-date').value)
+    dateText.classList.add('date-text')
+    const dateValue = document.getElementById('modal-set-date')
+    dateText.textContent = formatDate(dateValue.value)
 
     cardInfoDate.appendChild(dateIcon)
     cardInfoDate.appendChild(dateText)
@@ -84,6 +84,7 @@ function createCard() {
   // Pega a tag selecionada
   const selectOption = document.getElementById('modal-set-tag')
   const tagText = document.createElement('p')
+  tagText.classList.add('tag-text')
   tagText.textContent = selectOption.value
 
   const cardText = document.createElement('div')
@@ -143,6 +144,24 @@ function createCard() {
   editIcon.classList.add('card-footer-option-edit')
   editButton.appendChild(editIcon)
   footerItem2.appendChild(editButton)
+
+  editButton.addEventListener('click', function () {
+    const modalEditTask = document.getElementById('edit-task')
+    const currentCard = this.closest('.card')
+
+    if (currentCard) {
+      const currentTag = currentCard.querySelector('.tag-text')
+      const currentDate = currentCard.querySelector('.date-text')
+      const currentNote = currentCard.querySelector('.card-text-content')
+
+      const editTag = document.getElementById('modal-set-date')
+      const editDate = document.getElementById('modal-set-tag')
+      const editNote = document.getElementById('textarea-edit-task')
+
+      editNote.value = currentNote.textContent
+    }
+    modalEditTask.showModal()
+  })
 
   // Adiciona o ícone de delete no card
   const footerItem3 = document.createElement('li')

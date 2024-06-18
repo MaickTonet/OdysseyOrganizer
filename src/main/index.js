@@ -1,9 +1,10 @@
-import { app, shell, BrowserWindow, ipcMain } from 'electron'
+import { app, shell, BrowserWindow, ipcMain, Tray } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
 
 function createWindow() {
+  const tray = new Tray(icon)
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     minWidth: 800,
@@ -35,6 +36,14 @@ function createWindow() {
   } else {
     mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
   }
+
+  tray.on('click', () => {
+    mainWindow.isVisible() ? mainWindow.hide() : mainWindow.maximize()
+  })
+
+  mainWindow.on('show', () => {
+    tray.setToolTip('Endemon')
+  })
 }
 
 // This method will be called when Electron has finished

@@ -38,7 +38,7 @@ function createWindow() {
   }
 
   tray.on('click', () => {
-    mainWindow.isVisible() ? mainWindow.hide() : mainWindow.maximize()
+    mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show();
   })
 
   mainWindow.on('show', () => {

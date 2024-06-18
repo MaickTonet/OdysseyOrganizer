@@ -42,7 +42,7 @@ function createWindow() {
   })
 
   mainWindow.on('show', () => {
-    tray.setToolTip('Endemon')
+    tray.setToolTip('Odyssey Organizer')
   })
 }
 

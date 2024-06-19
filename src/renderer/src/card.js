@@ -52,7 +52,7 @@ function createCard() {
 
     // Formata a data
     function formatDate(data) {
-      if (isNaN(parseInt(data))) {
+      if (isNaN(parseInt(data))) { 
         return ''
       } else {
         const dataObj = new Date(data)
@@ -150,12 +150,8 @@ function createCard() {
     const currentCard = this.closest('.card')
 
     if (currentCard) {
-      const currentTag = currentCard.querySelector('.tag-text')
-      const currentDate = currentCard.querySelector('.date-text')
       const currentNote = currentCard.querySelector('.card-text-content')
 
-      const editTag = document.getElementById('modal-set-date')
-      const editDate = document.getElementById('modal-set-tag')
       const editNote = document.getElementById('textarea-edit-task')
 
       editNote.value = currentNote.textContent

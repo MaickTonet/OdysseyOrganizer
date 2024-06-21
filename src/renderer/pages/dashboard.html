@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Imports de estilo -->
+    <link rel="stylesheet" href="../style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Odyssey Organizer</title>
+  </head>
+  <body>
+    <!-- Cabeçalho -->
+    <header>
+      <img src="../../../resources/odyssey-organizer-banner.png" id="header-logo" />
+
+      <!-- Barra de navegação -->
+      <nav>
+        <!-- Adicionar Nota -->
+        <button id="bnt-create-task" class="header-btn">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <!-- Filtros -->
+        <button class="header-btn">
+          <i class="fa-solid fa-filter"></i>
+        </button>
+        <!-- Perfil -->
+        <button class="header-btn">
+          <i class="fa-solid fa-user"></i>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Container da página -->
+    <main>
+      <!-- Modal de criação de Nota -->
+      <dialog id="create-task">
+        <div class="modal-header">
+          <h2 class="modal-tittle">Adicionar Nota</h2>
+        </div>
+        <form action="">
+          <div class="modal-options">
+            <div class="modal-date">
+              <p>Notificar em:</p>
+              <input type="date" id="modal-set-date" />
+            </div>
+            <div class="modal-tag">
+              <p>Tag:</p>
+              <select id="modal-set-tag">
+                <option value="casa">Casa</option>
+                <option value="trabalho">Trabalho</option>
+                <option value="meta">Meta</option>
+                <option value="lembrete">Lembrete</option>
+                <option value="finança">Finança</option>
+                <option value="projeto">Projeto</option>
+                <option value="tarefa">Tarefa</option>
+                <option value="ideia">Ideia</option>
+                <option value="leitura">Leitura</option>
+                <option value="hobbie">Hobbie</option>
+                <option value="compra">Compra</option>
+                <option value="festa">Festa</option>
+              </select>
+            </div>
+          </div>
+          <hr class="divider" />
+          <div class="modal-section">
+            <textarea
+              placeholder="Anote algo..."
+              id="textarea-create-task"
+              cols="30"
+              rows="10"
+              maxlength="200"
+            ></textarea>
+          </div>
+        </form>
+        <button type="submit" id="modal-btn-create-task">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </dialog>
+
+      <!-- Modal de edição de nota -->
+      <dialog id="edit-task">
+        <div class="modal-header">
+          <h2 class="modal-tittle">Editar Nota</h2>
+        </div>
+        <form action="">
+          <div class="modal-options">
+            <div class="modal-date">
+              <p>Notificar em:</p>
+              <input type="date" id="modal-set-date" />
+            </div>
+            <div class="modal-tag">
+              <p>Tag:</p>
+              <select id="modal-set-tag">
+                <option value="casa">Casa</option>
+                <option value="trabalho">Trabalho</option>
+                <option value="meta">Meta</option>
+                <option value="lembrete">Lembrete</option>
+                <option value="finança">Finança</option>
+                <option value="projeto">Projeto</option>
+                <option value="tarefa">Tarefa</option>
+                <option value="ideia">Ideia</option>
+                <option value="leitura">Leitura</option>
+                <option value="hobbie">Hobbie</option>
+                <option value="compra">Compra</option>
+                <option value="festa">Festa</option>
+              </select>
+            </div>
+          </div>
+          <hr class="divider" />
+          <div class="modal-section">
+            <textarea
+              placeholder="Mudou de ideia?.."
+              id="textarea-edit-task"
+              cols="30"
+              rows="10"
+              maxlength="200"
+            ></textarea>
+          </div>
+        </form>
+        <button type="submit" id="modal-btn-edit-task">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </dialog>
+    </main>
+    <script type="module" src="../src/card.js"></script>
+  </body>
+</html>

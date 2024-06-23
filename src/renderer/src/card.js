@@ -1,48 +1,57 @@
-// Código para abrir o modal de criação de card
 const bntCreateTask = document.getElementById('bnt-create-task')
 const modalCreateTask = document.getElementById('create-task')
+const bntCreateCard = document.getElementById('modal-btn-create-task')
 
 //Abre o modal
-bntCreateTask.onclick = function () {
+bntCreateTask.onclick = () => {
   modalCreateTask.showModal()
 }
 
 // Reseta o modal quando fechado
-modalCreateTask.addEventListener('close', function () {
-  let textarea = document.getElementById('textarea-create-task')
+modalCreateTask.addEventListener('close', () => {
+  let textarea = document.getElementById('modal-set-text')
   let datearea = document.getElementById('modal-set-date')
   datearea.value = ''
   textarea.placeholder = 'Digite algo...'
   textarea.value = ''
 })
 
-// Codigo para criar o card
-const bntCreateCard = document.getElementById('modal-btn-create-task')
+document.addEventListener('DOMContentLoaded', () => {
+  let cards = JSON.parse(localStorage.getItem('cards')) || []
 
-function createCard() {
+  cards.forEach((card) => {
+    createCard(card)
+  })
+})
+
+function createCard(card) {
   // Seleciona a tag <main>
   const main = document.querySelector('main')
 
   // Criação os elementos da estrutura
-  const card = document.createElement('div')
-  card.classList.add('card')
+  const cardElement = document.createElement('div')
+  cardElement.classList.add('card')
 
   // Adiciona um header randômico para o card
   const cardHeader = document.createElement('div')
 
+  //Gera um header aleatório
   const randomNumber = Math.floor(Math.random() * 10) + 1
   cardHeader.classList.add('card-header')
   cardHeader.classList.add('card-header-style-' + randomNumber)
+
+  //Gera o ícone de check no header (inicialemnte oculto)
   const checkCard = document.createElement('i')
   checkCard.classList.add('fa-regular')
   checkCard.classList.add('fa-circle-check')
   cardHeader.appendChild(checkCard)
 
+  //Gera a aba de informações (data e tag)
   const cardInfo = document.createElement('div')
   cardInfo.classList.add('card-info')
 
   //Verifica se a data foi preenchida e caso seja false não inclui o valor no card
-  if (isNaN(document.getElementById('modal-set-date').value)) {
+  if (card.date != '') {
     const cardInfoDate = document.createElement('div')
     cardInfoDate.classList.add('card-info-date')
 
@@ -52,7 +61,7 @@ function createCard() {
 
     // Formata a data
     function formatDate(data) {
-      if (isNaN(parseInt(data))) { 
+      if (isNaN(parseInt(data))) {
         return ''
       } else {
         const dataObj = new Date(data)
@@ -63,10 +72,10 @@ function createCard() {
       }
     }
 
+    //Adiciona a data no card
     const dateText = document.createElement('p')
     dateText.classList.add('date-text')
-    const dateValue = document.getElementById('modal-set-date')
-    dateText.textContent = formatDate(dateValue.value)
+    dateText.textContent = formatDate(card.date)
 
     cardInfoDate.appendChild(dateIcon)
     cardInfoDate.appendChild(dateText)
@@ -75,34 +84,30 @@ function createCard() {
 
   const cardInfoTag = document.createElement('div')
   cardInfoTag.classList.add('card-info-tag')
-  cardInfoTag.classList.add(document.getElementById('modal-set-tag').value)
+  cardInfoTag.classList.add(card.tag.toLowerCase())
 
   const tagIcon = document.createElement('i')
   tagIcon.classList.add('fa-solid')
   tagIcon.classList.add('fa-tag')
 
-  // Pega a tag selecionada
-  const selectOption = document.getElementById('modal-set-tag')
+  // Adiciona a tag ao card
   const tagText = document.createElement('p')
   tagText.classList.add('tag-text')
-  tagText.textContent = selectOption.value
+  tagText.textContent = card.tag
 
   const cardText = document.createElement('div')
   cardText.classList.add('card-text')
 
   // Adiciona o texto no card
-  const cardTextValue = document.getElementById('textarea-create-task')
   const cardTextContent = document.createElement('p')
   cardTextContent.classList.add('card-text-content')
-  cardTextContent.textContent = cardTextValue.value
+  cardTextContent.textContent = card.text.trim()
 
+  //Rodapé do card com as opções de edição e exclusão
   const cardFooter = document.createElement('div')
   cardFooter.classList.add('card-footer')
 
-  const footerList = document.createElement('ul')
-
   // Adiciona o ícone de check no card
-  const footerItem1 = document.createElement('li')
   const checkButton = document.createElement('button')
   checkButton.classList.add('check-bnt')
   checkButton.classList.add('option-bnt')
@@ -112,7 +117,6 @@ function createCard() {
   checkIcon.classList.add('card-footer-option')
   checkIcon.classList.add('card-footer-option-check')
   checkButton.appendChild(checkIcon)
-  footerItem1.appendChild(checkButton)
 
   //Alterar o card para concluído
   checkButton.addEventListener('click', function () {
@@ -133,7 +137,6 @@ function createCard() {
   })
 
   // Adiciona o ícone de edição no card
-  const footerItem2 = document.createElement('li')
   const editIcon = document.createElement('i')
   const editButton = document.createElement('button')
   editButton.classList.add('edit-bnt')
@@ -143,7 +146,6 @@ function createCard() {
   editIcon.classList.add('card-footer-option')
   editIcon.classList.add('card-footer-option-edit')
   editButton.appendChild(editIcon)
-  footerItem2.appendChild(editButton)
 
   editButton.addEventListener('click', function () {
     const modalEditTask = document.getElementById('edit-task')
@@ -160,7 +162,6 @@ function createCard() {
   })
 
   // Adiciona o ícone de delete no card
-  const footerItem3 = document.createElement('li')
   const deleteIcon = document.createElement('i')
   const deleteButton = document.createElement('button')
   deleteButton.classList.add('delete-bnt')
@@ -170,7 +171,6 @@ function createCard() {
   deleteIcon.classList.add('card-footer-option')
   deleteIcon.classList.add('card-footer-option-delete')
   deleteButton.appendChild(deleteIcon)
-  footerItem3.appendChild(deleteButton)
 
   // Deleta o card caso o botão seja pressionado
   deleteButton.addEventListener('click', function () {
@@ -188,28 +188,45 @@ function createCard() {
 
   cardText.appendChild(cardTextContent)
 
-  footerList.appendChild(footerItem1)
-  footerList.appendChild(footerItem2)
-  footerList.appendChild(footerItem3)
+  cardFooter.appendChild(checkButton)
+  cardFooter.appendChild(editButton)
+  cardFooter.appendChild(deleteButton)
 
-  cardFooter.appendChild(footerList)
-
-  card.appendChild(cardHeader)
-  card.appendChild(cardInfo)
-  card.appendChild(cardText)
-  card.appendChild(cardFooter)
+  cardElement.appendChild(cardHeader)
+  cardElement.appendChild(cardInfo)
+  cardElement.appendChild(cardText)
+  cardElement.appendChild(cardFooter)
 
   // Adiciona a estrutura ao elemento <main>
-  main.appendChild(card)
+  main.appendChild(cardElement)
 }
 
-//Verifica se tem algum texto no textarea
-bntCreateCard.onclick = function () {
-  if (document.getElementById('textarea-create-task').value == '') {
-    let textarea = document.getElementById('textarea-create-task')
+bntCreateCard.onclick = () => {
+  //verifica se o textarea foi preenchido
+  let textarea = document.getElementById('modal-set-text')
+  if (textarea.value == '') {
     textarea.placeholder = 'Digite algum texto para adicionar o card'
   } else {
+    //Pega o array de cards do localStorage
+    let cards = JSON.parse(localStorage.getItem('cards')) || []
+
+    //Cria um novo card
+    const card = {
+      id: cards.length + 1,
+      date: document.getElementById('modal-set-date').value,
+      tag: document.getElementById('modal-set-tag').value,
+      text: document.getElementById('modal-set-text').value,
+      check: false
+    }
+
+    //Adiciona o novo card ao array
+    cards.push(card)
+    localStorage.setItem('cards', JSON.stringify(cards))
+
+    //Cria o card na tela
+    createCard(card)
+
+    //Fecha o modal
     modalCreateTask.close()
-    createCard()
   }
 }

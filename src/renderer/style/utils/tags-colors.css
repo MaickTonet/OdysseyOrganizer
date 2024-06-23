@@ -22,12 +22,6 @@
   border-radius: 30px;
 }
 
-.financa {
-  background-color: #c8e6c9; /* Verde Menta Claro */
-  padding: 5px;
-  border-radius: 30px;
-}
-
 .projeto {
   background-color: #ffe0b2; /* Laranja Claro */
   padding: 5px;
@@ -57,7 +51,6 @@
   padding: 5px;
   border-radius: 30px;
 }
-
 
 .compra {
   background-color: #f0f4c3; /* Verde Lima Suave */

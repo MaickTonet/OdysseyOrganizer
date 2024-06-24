@@ -228,7 +228,7 @@ body::-webkit-scrollbar {
   width: 0;
 }
 
-#edit-modal-set-date {
+#modal-edit-date {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -238,7 +238,7 @@ body::-webkit-scrollbar {
   outline: none;
 }
 
-#edit-modal-set-tag {
+#modal-edit-tag {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-style: normal;

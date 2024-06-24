@@ -31,6 +31,7 @@ function createCard(card) {
   // Criação os elementos da estrutura
   const cardElement = document.createElement('div')
   cardElement.classList.add('card')
+  cardElement.id = card.id
 
   // Adiciona um header randômico para o card
   const cardHeader = document.createElement('div')
@@ -119,7 +120,7 @@ function createCard(card) {
   checkButton.appendChild(checkIcon)
 
   //Alterar o card para concluído
-  checkButton.addEventListener('click', function () {
+  checkButton.addEventListener('click', () => {
     const currentCard = this.closest('.card')
     if (currentCard && !card.classList.contains('card-checked')) {
       cardHeader.classList.add('header-checked')
@@ -151,14 +152,38 @@ function createCard(card) {
     const modalEditTask = document.getElementById('edit-task')
     const currentCard = this.closest('.card')
 
+    modalEditTask.showModal()
+
     if (currentCard) {
-      const currentNote = currentCard.querySelector('.card-text-content')
+      const submitButton = document.getElementById('modal-btn-edit-task')
+
+      let cards = JSON.parse(localStorage.getItem('cards')) || []
+      let selectedCard = cards.find((card) => card.id === parseInt(currentCard.id))
 
       const editNote = document.getElementById('textarea-edit-task')
+      const editDate = document.getElementById('modal-edit-date')
+      const editTag = document.getElementById('modal-edit-tag')
 
-      editNote.value = currentNote.textContent
+      editNote.value = selectedCard.text
+      editDate.value = selectedCard.date
+      editTag.value = selectedCard.tag
+
+      submitButton.onclick = () => {
+        selectedCard.text = editNote.value
+        selectedCard.date = editDate.value
+        selectedCard.tag = editTag.value
+  
+        // Update the card in localStorage
+        localStorage.setItem('cards', JSON.stringify(cards))
+  
+        // Update the card on the page
+        cardTextContent.textContent = selectedCard.text
+        cardInfoTag.textContent = selectedCard.tag
+  
+        // Close the modal
+        modalEditTask.close()
+      }
     }
-    modalEditTask.showModal()
   })
 
   // Adiciona o ícone de delete no card
@@ -174,10 +199,12 @@ function createCard(card) {
 
   // Deleta o card caso o botão seja pressionado
   deleteButton.addEventListener('click', function () {
+    let cards = JSON.parse(localStorage.getItem('cards')) || []
     const currentCard = this.closest('.card')
-    if (currentCard) {
-      currentCard.remove() // Remove o card pai do botão clicado
-    }
+
+    cards = cards.filter((card) => card.id !== parseInt(currentCard.id))
+    currentCard.remove()
+    localStorage.setItem('cards', JSON.stringify(cards))
   })
 
   // Monta a estrutura
@@ -230,3 +257,4 @@ bntCreateCard.onclick = () => {
     modalCreateTask.close()
   }
 }
+;('')

@@ -120,20 +120,35 @@ function createCard(card) {
   checkButton.appendChild(checkIcon)
 
   //Alterar o card para concluído
-  checkButton.addEventListener('click', () => {
+  checkButton.addEventListener('click', function () {
     const currentCard = this.closest('.card')
-    if (currentCard && !card.classList.contains('card-checked')) {
-      cardHeader.classList.add('header-checked')
-      cardHeader.classList.remove('card-header-style-' + randomNumber)
-      card.classList.add('card-checked')
-      checkCard.classList.add('icon-checked')
-      cardTextContent.classList.add('text-checked')
-    } else if (currentCard) {
-      cardHeader.classList.remove('header-checked')
-      cardHeader.classList.add('card-header-style-' + randomNumber)
-      card.classList.remove('card-checked')
-      checkCard.classList.remove('icon-checked')
-      cardTextContent.classList.remove('text-checked')
+
+    if (currentCard) {
+      const cardId = parseInt(currentCard.id)
+
+      let cards = JSON.parse(localStorage.getItem('cards')) || []
+      const selectedCard = cards.find((card) => card.id === cardId)
+
+      if (selectedCard) {
+        if (!selectedCard.check) {
+          // Add your code to mark the card as checked
+          cardHeader.classList.add('header-checked')
+          cardHeader.classList.remove('card-header-style-' + randomNumber)
+          selectedCard.check = true
+          checkCard.classList.add('icon-checked')
+          cardTextContent.classList.add('text-checked')
+        } else {
+          // Add your code to mark the card as unchecked
+          cardHeader.classList.remove('header-checked')
+          cardHeader.classList.add('card-header-style-' + randomNumber)
+          selectedCard.check = false
+          checkCard.classList.remove('icon-checked')
+          cardTextContent.classList.remove('text-checked')
+        }
+
+        // Update the card in localStorage
+        localStorage.setItem('cards', JSON.stringify(cards))
+      }
     }
   })
 
@@ -172,14 +187,14 @@ function createCard(card) {
         selectedCard.text = editNote.value
         selectedCard.date = editDate.value
         selectedCard.tag = editTag.value
-  
+
         // Update the card in localStorage
         localStorage.setItem('cards', JSON.stringify(cards))
-  
+
         // Update the card on the page
         cardTextContent.textContent = selectedCard.text
         cardInfoTag.textContent = selectedCard.tag
-  
+
         // Close the modal
         modalEditTask.close()
       }

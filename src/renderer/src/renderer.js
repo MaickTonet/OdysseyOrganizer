@@ -35,16 +35,26 @@ function createCard(card) {
 
   // Adiciona um header randômico para o card
   const cardHeader = document.createElement('div')
-
-  //Gera um header aleatório
-  const randomNumber = Math.floor(Math.random() * 10) + 1
   cardHeader.classList.add('card-header')
-  cardHeader.classList.add('card-header-style-' + randomNumber)
+
+  //Verifica se o card já esta concluído
+  if (card.check) {
+    cardHeader.classList.add('header-checked')
+  } else {
+    //Gera um header aleatório
+    const randomNumber = Math.floor(Math.random() * 10) + 1
+    cardHeader.classList.add('card-header-style-' + randomNumber)
+  }
 
   //Gera o ícone de check no header (inicialemnte oculto)
   const checkCard = document.createElement('i')
   checkCard.classList.add('fa-regular')
   checkCard.classList.add('fa-circle-check')
+
+  if (card.check) {
+    checkCard.classList.add('icon-checked')
+  }
+
   cardHeader.appendChild(checkCard)
 
   //Gera a aba de informações (data e tag)
@@ -102,6 +112,11 @@ function createCard(card) {
   // Adiciona o texto no card
   const cardTextContent = document.createElement('p')
   cardTextContent.classList.add('card-text-content')
+
+  if (card.check) {
+    cardTextContent.classList.add('text-checked')
+  }
+
   cardTextContent.textContent = card.text.trim()
 
   //Rodapé do card com as opções de edição e exclusão
@@ -132,15 +147,16 @@ function createCard(card) {
       if (selectedCard) {
         if (!selectedCard.check) {
           // Add your code to mark the card as checked
+          cardHeader.classList = ''
+          cardHeader.classList.add('card-header')
           cardHeader.classList.add('header-checked')
-          cardHeader.classList.remove('card-header-style-' + randomNumber)
           selectedCard.check = true
           checkCard.classList.add('icon-checked')
           cardTextContent.classList.add('text-checked')
         } else {
           // Add your code to mark the card as unchecked
           cardHeader.classList.remove('header-checked')
-          cardHeader.classList.add('card-header-style-' + randomNumber)
+          cardHeader.classList.add('card-header-style-' + (Math.floor(Math.random() * 10) + 1))
           selectedCard.check = false
           checkCard.classList.remove('icon-checked')
           cardTextContent.classList.remove('text-checked')
@@ -216,9 +232,11 @@ function createCard(card) {
   deleteButton.addEventListener('click', function () {
     let cards = JSON.parse(localStorage.getItem('cards')) || []
     const currentCard = this.closest('.card')
+    const currentCardId = currentCard.id
 
     cards = cards.filter((card) => card.id !== parseInt(currentCard.id))
     currentCard.remove()
+
     localStorage.setItem('cards', JSON.stringify(cards))
   })
 
@@ -272,4 +290,3 @@ bntCreateCard.onclick = () => {
     modalCreateTask.close()
   }
 }
-;('')

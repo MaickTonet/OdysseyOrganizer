@@ -29,6 +29,7 @@ function createWindow() {
     return { action: 'deny' }
   })
 
+
   // HMR for renderer base on electron-vite cli.
   // Load the remote URL for development or the local html file for production.
   if (is.dev && process.env['ELECTRON_RENDERER_URL']) {
@@ -38,7 +39,7 @@ function createWindow() {
   }
 
   tray.on('click', () => {
-    mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show();
+    mainWindow.isVisible() ? mainWindow.hide() : mainWindow.show()
   })
 
   mainWindow.on('show', () => {

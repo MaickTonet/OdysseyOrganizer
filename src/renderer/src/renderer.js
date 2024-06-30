@@ -16,6 +16,7 @@ modalCreateTask.addEventListener('close', () => {
   textarea.value = ''
 })
 
+// Criar os cards quando o DOM é carregado
 document.addEventListener('DOMContentLoaded', () => {
   let cards = JSON.parse(localStorage.getItem('cards')) || []
 
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 })
 
+// Função para criar o card
 function createCard(card) {
   // Seleciona a tag <main>
   const main = document.querySelector('main')

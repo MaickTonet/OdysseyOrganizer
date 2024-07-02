@@ -16,7 +16,19 @@ body {
   display: flex;
   flex: 1 1 100%;
   flex-wrap: wrap;
-  background-color: #f1f1f1;
+  background-image: radial-gradient(
+    circle at top right,
+    rgb(15, 54, 60) 0%,
+    rgb(15, 54, 60) 3%,
+    rgb(62, 41, 84) 3%,
+    rgb(62, 41, 84) 50%,
+    rgb(108, 28, 108) 50%,
+    rgb(108, 28, 108) 60%,
+    rgb(155, 14, 131) 60%,
+    rgb(155, 14, 131) 63%,
+    rgb(201, 1, 155) 63%,
+    rgb(201, 1, 155) 100%
+  );
 }
 
 /* Definições do cabeçalho */
@@ -31,9 +43,14 @@ header {
   display: flex;
   align-items: center;
   /* flex: 1 1 100%; */
-  background-color: white;
+
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   z-index: 1000;
+
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(17.7px);
+  -webkit-backdrop-filter: blur(17.7px);
+  border: 1px solid rgba(255, 255, 255, 1);
 }
 
 /* Definições da barra de navegação */
@@ -44,7 +61,8 @@ nav {
   gap: 2em;
   margin-right: 20px;
   flex: 1 1 100%;
-  background-color: white;
+
+  background: transparent
 }
 
 /* Definições do container */
@@ -56,20 +74,22 @@ main {
   min-height: 80vh;
   height: max-content;
   display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(14rem, 1fr)
-  ); 
-  gap: 20px; 
-  grid-auto-flow: row; 
-
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: 20px;
+  grid-auto-flow: row;
   padding: 4rem;
   margin: 8rem 0.8rem 1rem 0.8rem;
   border-radius: 10px;
   flex: 1 1 100%;
   flex-wrap: wrap;
-  background-color: white;
-  box-shadow:
-    0 4px 6px rgba(0, 0, 0, 0.1),
-    0 1px 3px rgba(0, 0, 0, 0.08);
+  background-color: transparent;
+}
+
+
+
+#bnt-profile {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 25px;
 }

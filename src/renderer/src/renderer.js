@@ -1,11 +1,34 @@
 const bntCreateTask = document.getElementById('bnt-create-task')
 const modalCreateTask = document.getElementById('create-task')
 const bntCreateCard = document.getElementById('modal-btn-create-task')
+const bntModalProfile = document.getElementById('bnt-profile')
+const modalProfile = document.getElementById('profile-modal')
+const bntSubmitProfile = document.getElementById('submit-profile')
 
-//Abre o modal
+//Abre o modal de criação de task
 bntCreateTask.onclick = () => {
   modalCreateTask.showModal()
 }
+
+bntModalProfile.onclick = () => {
+  modalProfile.showModal()
+}
+
+bntSubmitProfile.addEventListener('click', () => {
+  const profileInput = document.getElementById('input-profile')
+  const profileName = localStorage.getItem('profileName')
+
+  if (profileName === null) {
+    localStorage.setItem('profileName', profileInput.value.trim())
+    profileInput.placeholder = ''
+  } else {
+    localStorage.removeItem('profileName')
+    localStorage.setItem('profileName', profileInput.value.trim())
+    profileInput.placeholder = ''
+  }
+  bntModalProfile.textContent = 'Olá ' + profileInput.value.trim()
+  modalProfile.close()
+})
 
 // Reseta o modal quando fechado
 modalCreateTask.addEventListener('close', () => {
@@ -18,6 +41,12 @@ modalCreateTask.addEventListener('close', () => {
 
 // Criar os cards quando o DOM é carregado
 document.addEventListener('DOMContentLoaded', () => {
+  if (localStorage.getItem('profileName') === null || localStorage.getItem('profileName') == '') {
+    bntModalProfile.textContent = 'Olá ...'
+  } else {
+    bntModalProfile.textContent = 'Olá ' + localStorage.getItem('profileName')
+  }
+
   let cards = JSON.parse(localStorage.getItem('cards')) || []
 
   cards.forEach((card) => {

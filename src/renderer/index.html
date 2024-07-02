@@ -26,16 +26,25 @@
         <button id="bnt-create-task" class="header-btn">
           <i class="fa-solid fa-plus"></i>
         </button>
-        <!-- Filtros -->
-        <button class="header-btn">
-          <i class="fa-solid fa-filter"></i>
-        </button>
         <!-- Perfil -->
-        <button class="header-btn">
-          <i class="fa-solid fa-user"></i>
-        </button>
+        <button id="bnt-profile" class="header-btn">Olá ...</button>
       </nav>
     </header>
+
+    <dialog id="filter-modal">
+      <h2 class="filter-title">Remover finalizados?</h2>
+      <div class="filter-options">
+        <button id="remove-checked"></button>
+      </div>
+    </dialog>
+
+    <dialog id="profile-modal">
+      <div class="wrapper-profile">
+        <h2 class="profile-title">Digite seu nome</h2>
+        <input id="input-profile" type="text" placeholder="Digite seu nome" />
+        <button id="submit-profile">Enviar</button>
+      </div>
+    </dialog>
 
     <!-- Container da página -->
     <main>

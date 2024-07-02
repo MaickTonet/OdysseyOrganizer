@@ -288,3 +288,67 @@ body::-webkit-scrollbar {
 #textarea-edit-task::-webkit-scrollbar {
   width: 0;
 }
+
+#profile-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 70%;
+  border: none;
+  border-radius: 1rem;
+  outline: none;
+  padding: 5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(17.7px);
+  -webkit-backdrop-filter: blur(17.7px);
+  border: 1px solid rgba(255, 255, 255, 1);
+}
+
+.wrapper-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+.profile-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 60px;
+}
+
+#input-profile {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.5em;
+  width: 40%;
+  height: 20%;
+  border-radius: 1rem;
+  border: none;
+  padding: 1rem;
+  outline: none;
+  resize: none;
+  background-color: transparent;
+}
+
+#submit-profile {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#submit-profile:hover {
+  transform: scale(1.1);
+}

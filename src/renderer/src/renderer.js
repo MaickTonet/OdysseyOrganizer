@@ -12,7 +12,6 @@ bntCreateTask.onclick = () => {
 
 bntModalProfile.onclick = () => {
   modalProfile.showModal()
-  loadProfiles()
 }
 
 bntSubmitProfile.addEventListener('click', () => {
@@ -21,39 +20,15 @@ bntSubmitProfile.addEventListener('click', () => {
   if (profileName.value === '') {
     profileName.placeholder = 'Nome inválido!'
     return
-  }
-
-  let users = JSON.parse(localStorage.getItem('users')) || []
-
-  if (users.includes(profileName.value)) {
+  } else {
+    localStorage.removeItem('profileName')
+    localStorage.setItem('profileName', profileName.value.trim())
+    bntModalProfile.textContent = 'Ola ' + profileName.value.trim()
     profileName.value = ''
-    profileName.placeholder = 'Perfil já existe!'
-    return
   }
 
-  users.push(profileName.value)
-
-  localStorage.setItem('users', JSON.stringify(users))
-  loadProfiles()
-  profileName.value = ''
+  modalProfile.close()
 })
-
-function loadProfiles() {
-  let users = JSON.parse(localStorage.getItem('users')) || []
-
-  const profileList = document.querySelector('.profile-list')
-  profileList.innerHTML = ''
-
-  users.forEach((user) => {
-    const htmlStructure = `<div class="profile-row">
-            <p class="profile-name-row">${user}</p>
-            <button class="enter-profile" ><i class="fa-solid fa-right-to-bracket"></i></button>
-            <button class="delete-profile"><i class="fa-solid fa-trash"></i></button>
-          </div>`
-
-    profileList.insertAdjacentHTML('beforeend', htmlStructure)
-  })
-}
 
 // Reseta o modal quando fechado
 modalCreateTask.addEventListener('close', () => {
@@ -274,7 +249,7 @@ function createCard(card) {
         cardInfoTag.textContent = selectedCard.tag
 
         // Close the modal
-        location.reload();
+        location.reload()
         modalEditTask.close()
       }
     }

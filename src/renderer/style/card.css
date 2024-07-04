@@ -1,5 +1,6 @@
 /* Componentes do card */
 .card {
+  animation: card-enter 0.5s ease-in-out;
   min-width: 14rem;
   border-radius: 1rem;
   height: max-content;
@@ -169,6 +170,7 @@
 
 .card-checked {
   border: 3px solid green;
+  animation: card-checked-scale 0.3s ease-in-out;
 }
 
 .icon-checked {
@@ -178,4 +180,28 @@
 .text-checked {
   text-decoration: line-through;
   color: gray;
+}
+
+/* Define a animação */
+@keyframes card-enter  {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes card-checked-scale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1.0);
+  }
 }

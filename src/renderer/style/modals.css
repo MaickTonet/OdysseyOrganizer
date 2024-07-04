@@ -43,6 +43,10 @@ body::-webkit-scrollbar {
   border-radius: 1rem;
   outline: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(17.7px);
+  -webkit-backdrop-filter: blur(17.7px);
+  border: 1px solid rgba(255, 255, 255, 1);
 }
 
 #create-task[open] {
@@ -111,6 +115,7 @@ body::-webkit-scrollbar {
   border-radius: 0.3rem;
   border: 1px solid gray;
   outline: none;
+  background-color: transparent;
 }
 
 .modal-tag {
@@ -129,6 +134,7 @@ body::-webkit-scrollbar {
   border-radius: 0.3rem;
   border: 1px solid gray;
   outline: none;
+  background-color: transparent;
 }
 
 .divider {
@@ -147,7 +153,7 @@ body::-webkit-scrollbar {
 
 #modal-set-text {
   font-family: 'Roboto', sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   font-style: normal;
   font-size: 1em;
   width: 60%;
@@ -157,6 +163,7 @@ body::-webkit-scrollbar {
   padding: 1rem;
   outline: none;
   resize: none;
+  background-color: transparent;
 }
 
 #modal-btn-create-task {
@@ -199,6 +206,10 @@ body::-webkit-scrollbar {
   border-radius: 1rem;
   outline: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(17.7px);
+  -webkit-backdrop-filter: blur(17.7px);
+  border: 1px solid rgba(255, 255, 255, 1);
 }
 
 #edit-task[open] {
@@ -236,6 +247,7 @@ body::-webkit-scrollbar {
   border-radius: 0.3rem;
   border: 1px solid gray;
   outline: none;
+  background-color: transparent;
 }
 
 #modal-edit-tag {
@@ -246,11 +258,12 @@ body::-webkit-scrollbar {
   border-radius: 0.3rem;
   border: 1px solid gray;
   outline: none;
+  background-color: transparent;
 }
 
 #textarea-edit-task {
   font-family: 'Roboto', sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   font-style: normal;
   font-size: 1em;
   width: 60%;
@@ -260,6 +273,7 @@ body::-webkit-scrollbar {
   padding: 1rem;
   outline: none;
   resize: none;
+  background-color: transparent;
 }
 
 #modal-btn-edit-task {
@@ -299,7 +313,7 @@ body::-webkit-scrollbar {
   border: none;
   border-radius: 1rem;
   outline: none;
-  padding: 5rem;
+  padding: 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(17.7px);
@@ -307,26 +321,34 @@ body::-webkit-scrollbar {
   border: 1px solid rgba(255, 255, 255, 1);
 }
 
-.wrapper-profile {
+#profile-modal[open] {
+  -webkit-animation: show 0.6s ease normal;
+}
+
+#profile-modal::-webkit-scrollbar {
+  width: 0;
+}
+
+.profile-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 6rem;
+  gap: 30px;
 }
 
 .profile-title {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 60px;
+  font-size: 40px;
 }
 
 #input-profile {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 1.5em;
+  font-size: 1rem;
   width: 40%;
   height: 20%;
   border-radius: 1rem;
@@ -337,7 +359,15 @@ body::-webkit-scrollbar {
   background-color: transparent;
 }
 
-#submit-profile {
+.add-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+
+#create-profile {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -349,6 +379,56 @@ body::-webkit-scrollbar {
   transition: 0.3s;
 }
 
-#submit-profile:hover {
+#create-profile:hover {
   transform: scale(1.1);
+}
+
+.profile-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.profile-name-row {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+}
+
+.profile-list {
+  width: 50%;
+  display: flex;
+  align-items: flex-start;
+  /* justify-content: center; */
+  flex-direction: column;
+  gap: 30px;
+}
+
+.delete-profile,
+.enter-profile {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.profile-icon:hover {
+  transform: scale(1.1);
+}
+
+.fa-right-to-bracket:hover {
+  color: blue;
+}
+
+.fa-trash:hover {
+  color: red;
+}
+
+.fa-right-to-bracket,
+.fa-trash {
+  font-size: 24px;
 }

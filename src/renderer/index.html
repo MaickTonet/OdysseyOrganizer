@@ -18,7 +18,7 @@
   <body>
     <!-- Cabeçalho -->
     <header>
-      <img src="../../resources/odyssey-organizer-banner.png" id="header-logo" />
+      <img src="../../resources/odyssey-organizer.png" id="header-logo" />
 
       <!-- Barra de navegação -->
       <nav>
@@ -31,18 +31,16 @@
       </nav>
     </header>
 
-    <dialog id="filter-modal">
-      <h2 class="filter-title">Remover finalizados?</h2>
-      <div class="filter-options">
-        <button id="remove-checked"></button>
-      </div>
-    </dialog>
-
+    <!-- Modal de criação de perfil -->
     <dialog id="profile-modal">
-      <div class="wrapper-profile">
-        <h2 class="profile-title">Digite seu nome</h2>
-        <input id="input-profile" type="text" placeholder="Digite seu nome" />
-        <button id="submit-profile">Enviar</button>
+      <div class="profile-container">
+        <h2 class="profile-title">Crie um perfil</h2>
+        <div class="add-profile">
+          <input id="input-profile" type="text" placeholder="Digite seu nome" />
+          <button id="create-profile">Criar perfil</button>
+        </div>
+        <h2 class="profile-title">Lista de perfis</h2>
+        <div class="profile-list"></div>
       </div>
     </dialog>
 

@@ -3,7 +3,7 @@ const modalCreateTask = document.getElementById('create-task')
 const bntCreateCard = document.getElementById('modal-btn-create-task')
 const bntModalProfile = document.getElementById('bnt-profile')
 const modalProfile = document.getElementById('profile-modal')
-const bntSubmitProfile = document.getElementById('submit-profile')
+const bntSubmitProfile = document.getElementById('create-profile')
 
 //Abre o modal de criação de task
 bntCreateTask.onclick = () => {
@@ -12,23 +12,48 @@ bntCreateTask.onclick = () => {
 
 bntModalProfile.onclick = () => {
   modalProfile.showModal()
+  loadProfiles()
 }
 
 bntSubmitProfile.addEventListener('click', () => {
-  const profileInput = document.getElementById('input-profile')
-  const profileName = localStorage.getItem('profileName')
+  const profileName = document.getElementById('input-profile')
 
-  if (profileName === null) {
-    localStorage.setItem('profileName', profileInput.value.trim())
-    profileInput.placeholder = ''
-  } else {
-    localStorage.removeItem('profileName')
-    localStorage.setItem('profileName', profileInput.value.trim())
-    profileInput.placeholder = ''
+  if (profileName.value === '') {
+    profileName.placeholder = 'Nome inválido!'
+    return
   }
-  bntModalProfile.textContent = 'Olá ' + profileInput.value.trim()
-  modalProfile.close()
+
+  let users = JSON.parse(localStorage.getItem('users')) || []
+
+  if (users.includes(profileName.value)) {
+    profileName.value = ''
+    profileName.placeholder = 'Perfil já existe!'
+    return
+  }
+
+  users.push(profileName.value)
+
+  localStorage.setItem('users', JSON.stringify(users))
+  loadProfiles()
+  profileName.value = ''
 })
+
+function loadProfiles() {
+  let users = JSON.parse(localStorage.getItem('users')) || []
+
+  const profileList = document.querySelector('.profile-list')
+  profileList.innerHTML = ''
+
+  users.forEach((user) => {
+    const htmlStructure = `<div class="profile-row">
+            <p class="profile-name-row">${user}</p>
+            <button class="enter-profile" ><i class="fa-solid fa-right-to-bracket"></i></button>
+            <button class="delete-profile"><i class="fa-solid fa-trash"></i></button>
+          </div>`
+
+    profileList.insertAdjacentHTML('beforeend', htmlStructure)
+  })
+}
 
 // Reseta o modal quando fechado
 modalCreateTask.addEventListener('close', () => {
@@ -61,6 +86,10 @@ function createCard(card) {
 
   // Criação os elementos da estrutura
   const cardElement = document.createElement('div')
+
+  if (card.check) {
+    cardElement.classList.add('card-checked')
+  }
   cardElement.classList.add('card')
   cardElement.id = card.id
 
@@ -180,6 +209,7 @@ function createCard(card) {
           // Add your code to mark the card as checked
           cardHeader.classList = ''
           cardHeader.classList.add('card-header')
+          cardElement.classList.add('card-checked')
           cardHeader.classList.add('header-checked')
           selectedCard.check = true
           checkCard.classList.add('icon-checked')
@@ -187,6 +217,7 @@ function createCard(card) {
         } else {
           // Add your code to mark the card as unchecked
           cardHeader.classList.remove('header-checked')
+          cardElement.classList.remove('card-checked')
           cardHeader.classList.add('card-header-style-' + (Math.floor(Math.random() * 10) + 1))
           selectedCard.check = false
           checkCard.classList.remove('icon-checked')
@@ -243,6 +274,7 @@ function createCard(card) {
         cardInfoTag.textContent = selectedCard.tag
 
         // Close the modal
+        location.reload();
         modalEditTask.close()
       }
     }

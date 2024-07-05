@@ -23,7 +23,7 @@ bntSubmitProfile.addEventListener('click', () => {
   } else {
     localStorage.removeItem('profileName')
     localStorage.setItem('profileName', profileName.value.trim())
-    bntModalProfile.textContent = 'Ola ' + profileName.value.trim()
+    bntModalProfile.textContent = 'Olá ' + profileName.value.trim()
     profileName.value = ''
   }
 
